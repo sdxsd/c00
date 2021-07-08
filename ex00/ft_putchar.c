@@ -11,6 +11,7 @@ void ft_putchar(char c);
 // The next argument &c, references the value of the character passed as an argument to ft_putchar.
 // The final argument is how many bytes to write, since a character is only 1 byte long, the value 1 is used.  
 
-void ft_putchar(char c) {
+void ft_putchar(char c) 
+{
 	write(1, &c, 1);
 }
