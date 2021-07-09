@@ -1,4 +1,14 @@
-
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        ::::::::            */
+/*   ft_print_comb.c                                    :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: wmaguire <wmaguire@student.codam.nl>         +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2021/07/09 11:12:41 by wmaguire      #+#    #+#                 */
+/*   Updated: 2021/07/09 11:27:12 by wmaguire      ########   odam.nl         */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include <unistd.h>
 
@@ -9,13 +19,6 @@ void	ft_threech(char one, char two, char three);
 void	ft_putchar(char c)
 {
 	write(1, &c, 1);
-}
-
-void	threech(char one, char two, char three)
-{
-	ft_putchar(one);
-	ft_putchar(two);
-	ft_putchar(three);
 }
 
 char	int_to_char(int one, int two, int three)
@@ -33,39 +36,49 @@ char	int_to_char(int one, int two, int three)
 	c_one = digits[one];
 	c_two = digits[two];
 	c_three = digits[three];
-	threech(c_one, c_two, c_three);
+	ft_putchar(c_one);
+	ft_putchar(c_two);
+	ft_putchar(c_three);
+}
+
+int	validity(int one, int two, int three)
+{
+	if (one == two || two == three || three == one)
+		return (1);
+	else if (one > two || two > three)
+		return (1);
+	else
+		return (0);
+}
+
+void	calc_nums(int iter, int iter2, int iter3)
+{
+	while (iter <= 9)
+	{
+		iter2 = 0;
+		while (iter2 <= 9)
+		{
+			iter3 = 0;
+			while (iter3 <= 9)
+			{
+				if (validity(iter, iter2, iter3))
+				{
+					int_to_char (iter, iter2, iter3);
+					ft_putchar(',');
+				}
+				++iter3;
+			}
+			++iter2;
+		}
+		++iter;
+	}
 }
 
 void	ft_print_comb(void)
 {
-	int		iterator;
-	int		iterator2;
-	int		iterator3;
+	int		iter;
+	int		iter2;
+	int		iter3;
 
-	iterator = 0;
-	iterator2 = 0;
-	iterator3 = 0;
-	while (iterator <= 9)
-	{
-		iterator2 = 0;
-		while (iterator2 <= 9)
-		{
-			iterator3 = 0;
-			while (iterator3 <= 9)
-			{
-				if (iterator == iterator2 || iterator2 == iterator3 || iterator3 == iterator)
-					;
-				else if (iterator > iterator2 || iterator2 > iterator3)
-					;
-				else
-				{
-					int_to_char	(iterator,iterator2,iterator3);
-					ft_putchar(',');
-				}
-				iterator3++;
-			}
-			++iterator2;
-		}
-		++iterator; 
-	}
+	calc_nums(iter, iter2, iter3);
 }
