@@ -1,43 +1,54 @@
-#include <unistd.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        ::::::::            */
+/*   ft_print_comb2.c                                   :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: wmaguire <wmaguire@student.codam.nl>         +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2021/07/09 11:58:39 by wmaguire      #+#    #+#                 */
+/*   Updated: 2021/07/09 13:47:52 by wmaguire      ########   odam.nl         */
+/*                                                                            */
+/* ************************************************************************** */
 
-void	ft_print_comb(void);
-void	ft_putchar(char c);
-void	two_char(char one, char two);
+#include <unistd.h> 
 
-void ft_putchar(char c) 
+void	ft_putchar(char c)
 {
 	write(1, &c, 1);
 }
 
-void two_char(char one, char two) 
+void	int_to_char(int one, int two)
 {
-	ft_putchar(one);
-	ft_putchar(two);
+	ft_putchar((one / 10) + '0');
+	ft_putchar((two / 10) + '0');
+	ft_putchar(',');
 }
 
-void ft_print_comb(void) 
+int	valcheck(int one, int two)
 {
-	char digits[10] = "0123456789";
-	int iterator, iterator2;
-	iterator = iterator2 = 0;
-	char a_char, b_char;
-	while(iterator <= 9) 
+
+}
+
+void	ft_print_comb2(void)
+{
+	int	num1;
+	int	num2;
+
+	num1 = 0;
+	num2 = 0;
+	while (num1 <= 99)
 	{
-		iterator2 = 0;
-		while(iterator2 <= 9) 
+		while (num2 <= 99)
 		{
-			if(iterator == iterator2) 
-				;
-			else if(iterator > iterator2)
-				;
-			else {
-				a_char = digits[iterator];
-				b_char = digits[iterator2];
-				two_char(a_char,b_char);
-				ft_putchar(',');
-			}
-			++iterator2;
+			++num2;
+			int_to_char(num1, num2);
 		}
-		++iterator; 
+		++num1;
 	}
+}
+
+int	main(void)
+{
+	ft_print_comb2();
+	return (0);
 }
