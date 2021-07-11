@@ -22,19 +22,17 @@ void	ft_putchar(char c)
 
 void	ft_print_numbers(void)
 {
-	char	numbers[10];
+	char    *numbers;
 	int		counter;
-	int		iterator;
 	char	num;
-
-	iterator = 0;
-	counter = 0;
-	while (iterator <= 10)
-		numbers[iterator] = iterator;
-	while (counter != 10)
+	
+    counter = 0;	
+    numbers = "0123456789";
+    while (counter != 10)
 	{
 		num = numbers[counter];
 		ft_putchar(num);
 		++counter;
 	}	
 }
+

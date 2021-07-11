@@ -21,18 +21,14 @@ void	ft_putchar(char c)
 	write(1, &c, 1);
 }
 
-char	int_to_char(int one, int two, int three)
+void    int_to_char(int one, int two, int three)
 {
-	char	digits[10];
+	char	*digits;
 	char	c_one;
 	char	c_two;
 	char	c_three;
-	int		char_iter;
 
-	while (char_iter <= 10)
-	{
-		digits[char_iter] = char_iter;
-	}
+	digits = "0123456789";
 	c_one = digits[one];
 	c_two = digits[two];
 	c_three = digits[three];
@@ -61,7 +57,7 @@ void	calc_nums(int iter, int iter2, int iter3)
 			iter3 = 0;
 			while (iter3 <= 9)
 			{
-				if (validity(iter, iter2, iter3))
+				if (validity(iter, iter2, iter3) == 0)
 				{
 					int_to_char (iter, iter2, iter3);
 					ft_putchar(',');
@@ -80,5 +76,13 @@ void	ft_print_comb(void)
 	int		iter2;
 	int		iter3;
 
+    iter = 0;
+    iter2 = 0;
+    iter3 = 0;
 	calc_nums(iter, iter2, iter3);
 }
+
+int main() {
+    ft_print_comb();
+}
+
