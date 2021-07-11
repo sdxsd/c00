@@ -6,7 +6,7 @@
 /*   By: wmaguire <wmaguire@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/07/09 11:30:59 by wmaguire      #+#    #+#                 */
-/*   Updated: 2021/07/09 11:31:04 by wmaguire      ########   odam.nl         */
+/*   Updated: 2021/07/11 14:39:58 by wmaguire      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ void	ft_print_alphabet(void)
 {
 	char	c;
 
-	c = 97;
-	while (c != 123)
+	c = 'a';
+	while (c <= 'z')
 	{
 		ft_putchar(c);
 		++c;

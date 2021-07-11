@@ -6,7 +6,7 @@
 /*   By: wmaguire <wmaguire@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/07/09 11:12:41 by wmaguire      #+#    #+#                 */
-/*   Updated: 2021/07/09 11:27:12 by wmaguire      ########   odam.nl         */
+/*   Updated: 2021/07/11 14:44:40 by wmaguire      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	ft_putchar(char c)
 	write(1, &c, 1);
 }
 
-void    int_to_char(int one, int two, int three)
+void	int_to_char(int one, int two, int three)
 {
 	char	*digits;
 	char	c_one;
@@ -76,13 +76,8 @@ void	ft_print_comb(void)
 	int		iter2;
 	int		iter3;
 
-    iter = 0;
-    iter2 = 0;
-    iter3 = 0;
+	iter = 0;
+	iter2 = 0;
+	iter3 = 0;
 	calc_nums(iter, iter2, iter3);
 }
-
-int main() {
-    ft_print_comb();
-}
-
